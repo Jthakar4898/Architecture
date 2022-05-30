@@ -1,0 +1,206 @@
+{% load static %}
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+  <title>Gallery</title>
+  <style type="text/css">
+    .container.gallery-container {
+      background-color: #fff;
+      color: #35373a;
+      min-height: 100vh;
+      padding: 30px 50px;
+      overflow:hidden;
+    }
+
+    .gallery-container h1 {
+      text-align: center;
+      margin-top: 50px;
+      font-family: "Droid Sans", sans-serif;
+      font-weight: bold;
+    }
+
+    .gallery-container p.page-description {
+      text-align: center;
+      margin: 25px auto;
+      font-size: 18px;
+      color: #999;
+    }
+
+    .tz-gallery {
+      padding: 40px;
+    }
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+  padding: 2px;
+}
+
+.tz-gallery .lightbox img {
+  width: 100%;
+  border-radius: 0;
+  position: relative;
+}
+
+.tz-gallery .lightbox:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -13px;
+  margin-left: -13px;
+  opacity: 0;
+  color: #fff;
+  font-size: 26px;
+  font-family: "Glyphicons Halflings";
+  content: "\e003";
+  pointer-events: none;
+  z-index: 9000;
+  transition: 0.4s;
+}
+
+.tz-gallery .lightbox:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(46, 132, 206, 0.7);
+  content: "";
+  transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+  opacity: 1;
+}
+
+.baguetteBox-button {
+  background-color: transparent !important;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+
+  <div class="container gallery-container">
+    <div class="tz-gallery">
+      <div class="row">
+        <div class="col-sm-12 col-md-4">
+          <a class="lightbox" href="{{data.img1.url}}">
+            <img class="img-fluid" src="{{data.img1.url}}" alt="Bridge">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <a class="lightbox" href="{{data.img2.url}}">
+            <img class="img-fluid"  src="{{data.img2.url}}" alt="Park">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <a class="lightbox" href="{{data.img3.url}}">
+            <img class="img-fluid"  src="{{data.img3.url}}" alt="Tunnel">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <a class="lightbox" href="{{data.img4.url}}">
+            <img class="img-fluid"  src="{{data.img4.url}}" alt="Traffic">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-6">
+          <a class="lightbox" href="{{data.img5.url}}">
+            <img class="img-fluid"  src="{{data.img5.url}}" alt="Coast">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a class="lightbox" href="{{data.img6.url}}">
+            <img class="img-fluid"  src="{{data.img6.url}}" alt="Rails">
+          </a>
+        </div>
+
+        <div class="col-sm-12 col-md-4 col-lg-4">
+          <a class="lightbox" href="{{data.img7.url}}">
+            <img class="img-fluid"  src="{{data.img7.url}}" alt="Bridge">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a class="lightbox" href="{{data.img8.url}}">
+            <img class="img-fluid"  src="{{data.img8.url}}" alt="Park">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-6 col-lg-6">
+          <a class="lightbox" href="{{data.img9.url}}">
+            <img class="img-fluid"  src="{{data.img9.url}}" alt="Tunnel">
+          </a>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <a class="lightbox" href="{{data.img10.url}}">
+            <img class="img-fluid"  src="{{data.img10.url}}" alt="Traffic">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a class="lightbox" href="{{data.img11.url}}">
+            <img class="img-fluid"  src="{{data.img11.url}}" alt="Coast">
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-4">
+          <a class="lightbox" href="{{data.img12.url}}">
+            <img class="img-fluid" src="{{data.img12.url}}" alt="Rails">
+          </a>
+        </div>
+           <div class="col-sm-12 col-md-4 col-lg-4">
+                <a class="lightbox" href="{{data.img13.url}}">
+                <img class="img-fluid" src="{{data.img13.url}}" alt="Rails">
+                </a>
+           </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+                <a class="lightbox" href="{{data.img14.url}}">
+                <img class="img-fluid" src="{{data.img14.url}}" alt="Rails">
+                </a>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-6">
+                <a class="lightbox" href="{{data.img15.url}}">
+                <img class="img-fluid" src="{{data.img15.url}}" alt="Rails">
+                </a>
+           </div>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    baguetteBox.run('.tz-gallery');
+  </script>
+</body>
+
+</html>
